@@ -1,0 +1,34 @@
+﻿@model ItemSetupAutomationPlatform.Models.ViewModels.IAP_FieldsViewModel
+@{
+    ViewBag.Title = "New Field";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("NewField", "IAP_Fields", FormMethod.Post))
+{
+<div class="row">
+    <div class="col-md-12">
+        <div>
+            @Html.LabelFor(model => model.FieldName)
+            @Html.TextBoxFor(model => model.FieldName, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.FieldName,null, new {@class="text-danger" })
+        </div>
+        <div>
+            @Html.LabelFor(model => model.FieldLabel)
+            @Html.TextBoxFor(model => model.FieldLabel, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.FieldLabel, null, new { @class = "text-danger" })
+        </div>
+        <div>
+            @Html.LabelFor(model => model.FieldType)
+            @Html.TextBoxFor(model => model.FieldType, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.FieldType, null, new { @class = "text-danger" })
+        </div>
+        <br />
+        <div style="text-align:right:">
+            <input value="Save" class="btn btn-primary" type="submit" />
+        </div>
+    </div>
+</div>
+}
+

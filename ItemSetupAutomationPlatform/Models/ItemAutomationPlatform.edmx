@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ItemAutomationPlatformModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ItemAutomationPlatformModelStoreContainer">
+    <EntitySet Name="IAP_Fields" EntityType="ItemAutomationPlatformModel.Store.IAP_Fields" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="IAP_FieldTypes" EntityType="ItemAutomationPlatformModel.Store.IAP_FieldTypes" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="IAP_Fields">
+    <Key>
+      <PropertyRef Name="FieldName" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FieldName" Type="nchar" Nullable="false" MaxLength="40" />
+    <Property Name="FieldType" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="FieldLabel" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FieldLenght" Type="int" Nullable="true" />
+    <Property Name="FieldDataSource" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FieldOptions" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="IAP_FieldTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nchar" Nullable="false" MaxLength="40" />
+    <Property Name="UseDataSource" Type="bit" Nullable="true" />
+    <Property Name="UseOptions" Type="bit" Nullable="true" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ItemAutomationPlatformModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ItemAutomationPlatformEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="IAP_Fields" EntityType="ItemAutomationPlatformModel.IAP_Fields" />
+          <EntitySet Name="IAP_FieldTypes" EntityType="ItemAutomationPlatformModel.IAP_FieldTypes" />
+        </EntityContainer>
+        <EntityType Name="IAP_Fields">
+          <Key>
+            <PropertyRef Name="FieldName" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FieldName" Type="String" Nullable="false" MaxLength="40" FixedLength="true" Unicode="true" />
+          <Property Name="FieldType" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="FieldLabel" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FieldLenght" Type="Int32" />
+          <Property Name="FieldDataSource" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FieldOptions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="IAP_FieldTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="40" FixedLength="true" Unicode="true" />
+          <Property Name="UseDataSource" Type="Boolean" />
+          <Property Name="UseOptions" Type="Boolean" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ItemAutomationPlatformModelStoreContainer" CdmEntityContainer="ItemAutomationPlatformEntities">
+    <EntitySetMapping Name="IAP_Fields">
+      <EntityTypeMapping TypeName="IsTypeOf(ItemAutomationPlatformModel.IAP_Fields)">
+        <MappingFragment StoreEntitySet="IAP_Fields">
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FieldType" ColumnName="FieldType" />
+          <ScalarProperty Name="FieldLabel" ColumnName="FieldLabel" />
+          <ScalarProperty Name="FieldLenght" ColumnName="FieldLenght" />
+          <ScalarProperty Name="FieldDataSource" ColumnName="FieldDataSource" />
+          <ScalarProperty Name="FieldOptions" ColumnName="FieldOptions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IAP_FieldTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(ItemAutomationPlatformModel.IAP_FieldTypes)">
+        <MappingFragment StoreEntitySet="IAP_FieldTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UseDataSource" ColumnName="UseDataSource" />
+          <ScalarProperty Name="UseOptions" ColumnName="UseOptions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
