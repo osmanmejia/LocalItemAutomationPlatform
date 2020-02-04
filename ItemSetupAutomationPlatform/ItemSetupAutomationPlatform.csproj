@@ -136,6 +136,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\IAP_FieldBackEndCode.cs">
+      <DependentUpon>ItemAutomationPlatform.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IAP_Fields.cs">
       <DependentUpon>ItemAutomationPlatform.tt</DependentUpon>
     </Compile>
@@ -157,6 +160,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemAutomationPlatform.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>ItemAutomationPlatform.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ViewModels\IAP_FieldsViewModel.cs" />
     <Compile Include="Models\ViewModels\IAP_FieldTypesViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -173,21 +179,13 @@
     <Content Include="Content\Site.css" />
     <Content Include="Models\ItemAutomationPlatform.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ItemAutomationPlatform.Context.cs</LastGenOutput>
       <DependentUpon>ItemAutomationPlatform.edmx</DependentUpon>
+      <LastGenOutput>ItemAutomationPlatform.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ItemAutomationPlatform.edmx.sql" />
     <Content Include="Models\ItemAutomationPlatform.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ItemAutomationPlatform.edmx</DependentUpon>
       <LastGenOutput>ItemAutomationPlatform.cs</LastGenOutput>
-    </Content>
-    <EntityDeploy Include="Models\ItemAutomationPlatform.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ItemAutomationPlatform.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\ItemAutomationPlatform.edmx.diagram">
-      <DependentUpon>ItemAutomationPlatform.edmx</DependentUpon>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -212,6 +210,13 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <EntityDeploy Include="Models\ItemAutomationPlatform.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ItemAutomationPlatform.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ItemAutomationPlatform.edmx.diagram">
+      <DependentUpon>ItemAutomationPlatform.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

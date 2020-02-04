@@ -25,7 +25,9 @@ namespace ItemSetupAutomationPlatform.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<IAP_FieldBackEndCode> IAP_FieldBackEndCode { get; set; }
         public virtual DbSet<IAP_Fields> IAP_Fields { get; set; }
         public virtual DbSet<IAP_FieldTypes> IAP_FieldTypes { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

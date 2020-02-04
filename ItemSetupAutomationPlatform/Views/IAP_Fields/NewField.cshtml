@@ -1,34 +1,74 @@
 ﻿@model ItemSetupAutomationPlatform.Models.ViewModels.IAP_FieldsViewModel
 @{
     ViewBag.Title = "New Field";
+    List<SelectListItem> fieldTypes = (List<SelectListItem>)ViewBag.items;
+}
+<head>
+    <script src="../Scripts/jquery-3.3.1.min.js"></script>
+</head>
+
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            $('#FieldType').change(function () {
+                var value = $(this).val();
+                //var x = $('#ValidateDataSourceRequired')
+                if (value == '3') {
+                    $('.dsControl').show();
+                    
+                } else {
+                    $('.dsControl').hide();
+                }
+            });
+        });</script>
 }
 
 <h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm("NewField", "IAP_Fields", FormMethod.Post))
 {
-<div class="row">
-    <div class="col-md-12">
-        <div>
-            @Html.LabelFor(model => model.FieldName)
-            @Html.TextBoxFor(model => model.FieldName, "", new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.FieldName,null, new {@class="text-danger" })
-        </div>
-        <div>
-            @Html.LabelFor(model => model.FieldLabel)
-            @Html.TextBoxFor(model => model.FieldLabel, "", new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.FieldLabel, null, new { @class = "text-danger" })
-        </div>
-        <div>
-            @Html.LabelFor(model => model.FieldType)
-            @Html.TextBoxFor(model => model.FieldType, "", new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.FieldType, null, new { @class = "text-danger" })
-        </div>
-        <br />
-        <div style="text-align:right:">
-            <input value="Save" class="btn btn-primary" type="submit" />
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+            <br />
+            <div class="row">
+                <div class="col">
+                    @Html.LabelFor(model => model.FieldName)
+                    @Html.TextBoxFor(model => model.FieldName, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.FieldName, null, new { @class = "text-danger" })
+                </div>
+                <div class="col">
+                    @Html.LabelFor(model => model.FieldLabel)
+                    @Html.TextBoxFor(model => model.FieldLabel, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.FieldLabel, null, new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    @Html.LabelFor(model => model.FieldDescription)
+                    @Html.TextBoxFor(model => model.FieldDescription, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.FieldDescription, null, new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    @Html.LabelFor(model => model.FieldType, new { id = "FieldTypeLabel" })
+                    @Html.DropDownListFor(model => model.FieldType, fieldTypes, "Select an Option", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.FieldType, null, new { @class = "text-danger" })
+                </div>
+                <div class="col"></div>
+            </div>            
+            <br />
+            <div class="dsControl" style="display: none;">
+                @Html.LabelFor(model => model.FieldDataSource)
+                @Html.TextBoxFor(model => model.FieldDataSource, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.FieldDataSource, null, new { @class = "text-danger" })
+            </div>
+            <br />
+            <div style="text-align:right:">
+                <input value="Save" class="btn btn-primary" type="submit" />
+            </div>
         </div>
     </div>
-</div>
 }
 

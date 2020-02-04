@@ -12,17 +12,12 @@ namespace ItemSetupAutomationPlatform.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class IAP_Fields
+    public partial class sysdiagram
     {
-        public long Id { get; set; }
-        public string FieldName { get; set; }
-        public int FieldType { get; set; }
-        public string FieldLabel { get; set; }
-        public Nullable<int> FieldLenght { get; set; }
-        public string FieldDataSource { get; set; }
-        public string FieldOptions { get; set; }
-        public string FieldDescription { get; set; }
-    
-        public virtual IAP_FieldTypes IAP_FieldTypes { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

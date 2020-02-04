@@ -4,9 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3489caf731fe4842a0b8763d6f1bf626" Name="Diagram1">
-        <EntityTypeShape EntityType="ItemAutomationPlatformModel.IAP_Fields" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ItemAutomationPlatformModel.IAP_FieldTypes" Width="1.5" PointX="3.375" PointY="0.75" />
+      <Diagram DiagramId="e19e40af33a64bb4a086e8896a3c70d5" Name="Diagram1">
+        <EntityTypeShape EntityType="ItemAutomationPlatformModel.IAP_FieldBackEndCode" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItemAutomationPlatformModel.IAP_Fields" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItemAutomationPlatformModel.IAP_FieldTypes" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItemAutomationPlatformModel.sysdiagram" Width="1.5" PointX="0.75" PointY="4.75" />
+        <AssociationConnector Association="ItemAutomationPlatformModel.FK_IAP_FieldBackEndCode_IAP_FieldTypes" />
+        <AssociationConnector Association="ItemAutomationPlatformModel.FK_IAP_Fields_IAP_FieldTypes" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

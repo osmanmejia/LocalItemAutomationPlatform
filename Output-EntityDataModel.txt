@@ -1,0 +1,11 @@
+﻿Generated model file: ItemAutomationPlatform.edmx.
+Loading metadata from the database took 00:00:00.5804331.
+Generating the model took 00:00:01.1142923.
+Generated model file: ItemAutomationPlatform.edmx.
+Loading metadata from the database took 00:00:00.3863704.
+Generating the model took 00:00:00.8590150.
+Added the connection string to the Web.Config file.
+Writing the .edmx file took 00:00:00.0007718.
+Generated model file: ItemAutomationPlatform.edmx.
+Loading metadata from the database took 00:00:00.3914352.
+Generating the model took 00:00:00.9122249.

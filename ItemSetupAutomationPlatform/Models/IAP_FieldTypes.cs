@@ -14,9 +14,19 @@ namespace ItemSetupAutomationPlatform.Models
     
     public partial class IAP_FieldTypes
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public IAP_FieldTypes()
+        {
+            this.IAP_Fields = new HashSet<IAP_Fields>();
+        }
+    
         public int Id { get; set; }
         public string Description { get; set; }
         public Nullable<bool> UseDataSource { get; set; }
         public Nullable<bool> UseOptions { get; set; }
+    
+        public virtual IAP_FieldBackEndCode IAP_FieldBackEndCode { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<IAP_Fields> IAP_Fields { get; set; }
     }
 }

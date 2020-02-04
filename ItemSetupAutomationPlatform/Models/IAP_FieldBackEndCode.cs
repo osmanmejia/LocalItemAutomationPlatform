@@ -12,16 +12,10 @@ namespace ItemSetupAutomationPlatform.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class IAP_Fields
+    public partial class IAP_FieldBackEndCode
     {
-        public long Id { get; set; }
-        public string FieldName { get; set; }
-        public int FieldType { get; set; }
-        public string FieldLabel { get; set; }
-        public Nullable<int> FieldLenght { get; set; }
-        public string FieldDataSource { get; set; }
-        public string FieldOptions { get; set; }
-        public string FieldDescription { get; set; }
+        public int Id { get; set; }
+        public string ControllerCode { get; set; }
     
         public virtual IAP_FieldTypes IAP_FieldTypes { get; set; }
     }

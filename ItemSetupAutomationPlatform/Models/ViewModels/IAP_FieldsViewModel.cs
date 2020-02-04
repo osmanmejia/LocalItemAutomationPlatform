@@ -17,16 +17,29 @@ namespace ItemSetupAutomationPlatform.Models.ViewModels
 
         [Required]
         [Display(Name = "Type")]
-        public string FieldType { get; set; }
+        public int FieldType { get; set; }
+
+        
+        [Display(Name = "Type")]
+        public string FieldTypeDescription { get; set; }
 
         [Required]
         [Display(Name = "Label")]
         public string FieldLabel { get; set; }
 
+        [Display(Name = "Lenght")]
         public int? FieldLenght { get; set; }
 
+        [Display(Name = "Use Data Source")]
+        public bool UseDataSource { get; set; }
+
+        [Display(Name = "Data Source")]
         public string FieldDataSource { get; set; }
 
         public string FieldOptions { get; set; }
+
+        [Required]
+        [Display(Name = "Description")]
+        public string FieldDescription { get; set; }
     }
 }
